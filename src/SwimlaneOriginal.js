@@ -15,12 +15,10 @@ export default class Swimlane extends React.Component {
         />
       );
     })
-
     return (
       <div className="Swimlane-column">
         <div className="Swimlane-title">{this.props.name}</div>
-        <div className="Swimlane-dragColumn" 
-        ref={this.props.dragulaRef} data-id={this.props.name}>
+        <div className="Swimlane-dragColumn" ref={this.props.dragulaRef}>
           {cards}
         </div>
       </div>);

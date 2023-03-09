@@ -1,0 +1,59 @@
+--- SwimlaneOriginal.js	2023-03-05 17:28:15.873152200 -0500
++++ Swimlane.js	2023-03-06 15:19:20.810082300 -0500
+@@ -1,27 +1,29 @@
+-import React from 'react';
+-import Card from './Card';
+-import './Swimlane.css';
+-
+-export default class Swimlane extends React.Component {
+-  render() {
+-    const cards = this.props.clients.map(client => {
+-      return (
+-        <Card
+-          key={client.id}
+-          id={client.id}
+-          name={client.name}
+-          description={client.description}
+-          status={client.status}
+-        />
+-      );
+-    })
+-    return (
+-      <div className="Swimlane-column">
+-        <div className="Swimlane-title">{this.props.name}</div>
+-        <div className="Swimlane-dragColumn" ref={this.props.dragulaRef}>
+-          {cards}
+-        </div>
+-      </div>);
+-  }
+-
+-}
++import React from 'react';
++import Card from './Card';
++import './Swimlane.css';
++
++export default class Swimlane extends React.Component {
++  render() {
++    const cards = this.props.clients.map(client => {
++      return (
++        <Card
++          key={client.id}
++          id={client.id}
++          name={client.name}
++          description={client.description}
++          status={client.status}
++        />
++      );
++    })
++
++    return (
++      <div className="Swimlane-column">
++        <div className="Swimlane-title">{this.props.name}</div>
++        <div className="Swimlane-dragColumn" 
++        ref={this.props.dragulaRef} data-id={this.props.name}>
++          {cards}
++        </div>
++      </div>);
++  }
++
++}
